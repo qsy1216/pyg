@@ -1,0 +1,7 @@
+0:0:0:0:0:0:0:1 - - [15/Nov/2018:08:57:10 +0800] "GET / HTTP/1.1" 200 12133 http-bio-8080-exec-1 1022
+0:0:0:0:0:0:0:1 - - [15/Nov/2018:08:57:11 +0800] "GET /favicon.ico HTTP/1.1" 404 949 http-bio-8080-exec-7 13
+0:0:0:0:0:0:0:1 - - [15/Nov/2018:08:57:15 +0800] "GET /product/findAll HTTP/1.1" 200 21367 http-bio-8080-exec-8 759
+0:0:0:0:0:0:0:1 - - [15/Nov/2018:08:57:20 +0800] "GET /orders/findAll?page=1&pageSize=3 HTTP/1.1" 200 25663 http-bio-8080-exec-9 717
+0:0:0:0:0:0:0:1 - - [15/Nov/2018:09:58:42 +0800] "GET / HTTP/1.1" 200 12133 http-bio-8080-exec-1 238
+0:0:0:0:0:0:0:1 - - [15/Nov/2018:09:58:43 +0800] "GET /favicon.ico HTTP/1.1" 404 949 http-bio-8080-exec-7 17
+0:0:0:0:0:0:0:1 - - [15/Nov/2018:09:58:46 +0800] "GET /product/findAll HTTP/1.1" 200 21367 http-bio-8080-exec-8 878
