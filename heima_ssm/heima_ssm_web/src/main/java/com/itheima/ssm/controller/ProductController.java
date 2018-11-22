@@ -37,4 +37,8 @@ public class ProductController {
         //保存完成之后重新查询全部
         return "redirect:findAll";
     }
+
+
+
+
 }

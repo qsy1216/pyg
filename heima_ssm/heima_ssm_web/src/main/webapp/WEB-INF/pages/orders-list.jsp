@@ -242,7 +242,7 @@
 								<tbody>
 
 
-									<c:forEach items="${ordersList}" var="orders">
+									<c:forEach items="${pageInfo.list}" var="orders">
 
 										<tr>
 											<td><input name="ids" type="checkbox"></td>
@@ -254,7 +254,7 @@
 											<td class="text-center">${orders.orderStatusStr }</td>
 											<td class="text-center">
 												<button type="button" class="btn bg-olive btn-xs">订单</button>
-												<button type="button" class="btn bg-olive btn-xs" onclick="location.href='${pageContext.request.contextPath}/orders/findById.do?id=${orders.id}'">详情</button>
+												<button type="button" class="btn bg-olive btn-xs" onclick="location.href='${pageContext.request.contextPath}/orders/findById?id=${orders.id}'">详情</button>
 												<button type="button" class="btn bg-olive btn-xs">编辑</button>
 											</td>
 										</tr>
@@ -464,7 +464,7 @@
 			//获取下拉框的值
 			var pageSize = $("#changePageSize").val();
 
-			//向服务器发送请求，改变没页显示条数
+			//向服务器发送请求，改变每页显示条数
 			location.href = "${pageContext.request.contextPath}/orders/findAll.do?page=1&pageSize="
 					+ pageSize;
 		}

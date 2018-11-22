@@ -15,15 +15,13 @@
 
 
 
-    <!-- 开启注解扫描，管理service和dao -->
+    <!-- 开启注解扫描，管理service-->
     <context:component-scan base-package="com.itheima.ssm.service">
     </context:component-scan>
-    <context:component-scan base-package="com.itheima.ssm.dao">
-    </context:component-scan>
-
 
     <!-- 加载外部的properties配置文件 -->
     <context:property-placeholder location="classpath:jdbcConfig.properties"/>
+
     <!--Spring整合MyBatis框架-->
     <!--配置连接池-->
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
@@ -38,6 +36,19 @@
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource" />
         <!-- 传入PageHelper的插件 -->
+        <property name="plugins">
+            <array>
+                <!-- 传入插件的对象 -->
+                <bean class="com.github.pagehelper.PageInterceptor">
+                    <property name="properties">
+                        <props>
+                            <prop key="helperDialect">oracle</prop>
+                            <prop key="reasonable">true</prop>
+                        </props>
+                    </property>
+                </bean>
+            </array>
+        </property>
     </bean>
 
     <!-- 扫描dao接口 -->

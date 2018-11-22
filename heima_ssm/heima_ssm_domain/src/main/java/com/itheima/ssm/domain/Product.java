@@ -5,6 +5,9 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
+/**
+ * 产品信息
+ */
 public class Product {
     private String id; // 主键
     private String productNum; // 编号 唯一
@@ -17,22 +20,6 @@ public class Product {
     private String productDesc; // 产品描述
     private Integer productStatus; // 状态 0 关闭 1 开启
     private String productStatusStr;
-
-    public Product() {
-    }
-
-    public Product(String id, String productNum, String productName, String cityName, Date departureTime, String departureTimeStr, double productPrice, String productDesc, Integer productStatus, String productStatusStr) {
-        this.id = id;
-        this.productNum = productNum;
-        this.productName = productName;
-        this.cityName = cityName;
-        this.departureTime = departureTime;
-        this.departureTimeStr = departureTimeStr;
-        this.productPrice = productPrice;
-        this.productDesc = productDesc;
-        this.productStatus = productStatus;
-        this.productStatusStr = productStatusStr;
-    }
 
     public String getId() {
         return id;
@@ -75,7 +62,7 @@ public class Product {
     }
 
     public String getDepartureTimeStr() {
-        if (departureTime!=null){
+        if(departureTime!=null){
             departureTimeStr= DateUtils.dateToString(departureTime,"yyyy-MM-dd HH:mm:ss");
         }
         return departureTimeStr;
@@ -110,36 +97,17 @@ public class Product {
     }
 
     public String getProductStatusStr() {
-        if(productStatus!=null){
-            if (productStatus==0){
+        if (productStatus != null) {
+            // 状态 0 关闭 1 开启
+            if(productStatus==0)
                 productStatusStr="关闭";
-            }
-            if (productStatus==1){
+            if(productStatus==1)
                 productStatusStr="开启";
-            }
         }
-
         return productStatusStr;
     }
 
     public void setProductStatusStr(String productStatusStr) {
         this.productStatusStr = productStatusStr;
-    }
-
-
-    @Override
-    public String toString() {
-        return "Product{" +
-                "id='" + id + '\'' +
-                ", productNum='" + productNum + '\'' +
-                ", productName='" + productName + '\'' +
-                ", cityName='" + cityName + '\'' +
-                ", departureTime=" + departureTime +
-                ", departureTimeStr='" + departureTimeStr + '\'' +
-                ", productPrice=" + productPrice +
-                ", productDesc='" + productDesc + '\'' +
-                ", productStatus=" + productStatus +
-                ", productStatusStr='" + productStatusStr + '\'' +
-                '}';
     }
 }

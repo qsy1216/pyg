@@ -15,14 +15,14 @@ public class DateUtils {
      * @return
      */
     public static String dateToString(Date date,String patt){
-        SimpleDateFormat sdf = new SimpleDateFormat();
+        SimpleDateFormat sdf = new SimpleDateFormat(patt);
         // 格式化
         String format = sdf.format(date);
-        return "format";
+        return format;
     }
 
     public static Date stringToDate(String string,String patt) throws ParseException {
-        SimpleDateFormat sdf = new SimpleDateFormat();
+        SimpleDateFormat sdf = new SimpleDateFormat(patt);
         // 解析
         Date parse = sdf.parse(string);
         return parse;

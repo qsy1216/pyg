@@ -7,7 +7,7 @@
 		<!-- Sidebar user panel -->
 		<div class="user-panel">
 			<div class="pull-left image">
-				<img src="${pageContext.request.contextPath}/img/user2-160x160.jpg"
+				<img src="${pageContext.request.contextPath}/img/user1-128x128.jpg"
 					class="img-circle" alt="User Image">
 			</div>
 			<div class="pull-left info">
@@ -61,7 +61,7 @@
 							<i class="fa fa-circle-o"></i> 产品管理
 					</a></li>
 					<li id="system-setting"><a
-						href="${pageContext.request.contextPath}/orders/findAll"> <i
+						href="${pageContext.request.contextPath}/orders/findAll?page=1&pageSize=3"> <i
 							class="fa fa-circle-o"></i> 订单管理
 					</a></li>
 

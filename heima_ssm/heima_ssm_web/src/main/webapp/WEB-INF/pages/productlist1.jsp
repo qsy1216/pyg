@@ -249,10 +249,10 @@
 										<tr>
 											<td><input name="ids" type="checkbox"></td>
 											<td>${product.id }</td>
-											<td>${product.productNum }</td>
-											<td>${product.productName }</td>
-											<td>${product.cityName }</td>
-											<td>${product.departureTimeStr }</td>
+											<td>${product.productNum}</td>
+											<td>${product.productName}</td>
+											<td>${product.cityName}</td>
+											<td>${product.departureTimeStr}</td>
 											<td class="text-center">${product.productPrice }</td>
 											<td>${product.productDesc }</td>
 											<td class="text-center">${product.productStatusStr }</td>
