@@ -4,11 +4,13 @@ import com.itheima.ssm.domain.Role;
 import com.itheima.ssm.domain.UserInfo;
 import com.itheima.ssm.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.Arrays;
 import java.util.List;
 
 @Controller()
@@ -37,6 +39,7 @@ public class UserController {
      * @throws Exception
      */
     @RequestMapping("/save")
+//    @PreAuthorize("authentication.principal.username='tom'")
     public String save(UserInfo userInfo) throws Exception {
         userService.save(userInfo);
 
@@ -51,6 +54,7 @@ public class UserController {
      * @throws Exception
      */
     @RequestMapping("findById")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ModelAndView findById(ModelAndView mv,String id) throws Exception {
 
         UserInfo userInfo = userService.findById(id);
@@ -70,7 +74,11 @@ public class UserController {
     public ModelAndView findUserByIdAndAllRole(ModelAndView mv,@RequestParam(name = "id" ,required = true) String userid ) throws Exception {
 
         // 根据id查询用户
-        UserInfo userInfo = userService.findById(userid);
+//        UserInfo userInfo = userService.findById(userid);
+        //直接把user-list页面带过来的userID通过set方法注入到userInfo对象中也可以
+        UserInfo userInfo =new UserInfo();
+        userInfo.setId(userid);
+
         //根据id查询还可以添加的角色
         List<Role> roleList = userService.findOtherRoles(userid);
 

@@ -13,6 +13,9 @@
     <security:http pattern="/css/**" security="none"/>
     <security:http pattern="/img/**" security="none"/>
     <security:http pattern="/plugins/**" security="none"/>
+
+	<!--开启方法级权限-->
+	<security:global-method-security pre-post-annotations="enabled"/>
     
     <!-- 
     	配置具体的规则 
@@ -41,6 +44,10 @@
     </security:http>
 
 
+	<!--配置了之后-->
+	<bean id="webexpressionHandler" class="org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler" />
+
+
 
 	<!-- 切换成数据库中的用户名和密码 -->
 	<security:authentication-manager>
@@ -52,10 +59,12 @@
 
 	<!-- 配置加密类 -->
 	<bean id="passwordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
-    
 
-    
- </beans>   
+
+
+
+
+</beans>
  
  
  
