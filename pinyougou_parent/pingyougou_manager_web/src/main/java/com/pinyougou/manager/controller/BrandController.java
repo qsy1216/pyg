@@ -1,5 +1,6 @@
 package com.pinyougou.manager.controller;
 
+import com.alibaba.dubbo.config.annotation.Reference;
 import com.pinyougou.pojo.TbBrand;
 import com.pinyougou.sellergoods.service.BrandService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,12 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@Controller
-@ResponseBody
+@RestController
 @RequestMapping("/brand")
 public class BrandController {
 
-    @Autowired
+    @Reference
     private BrandService brandService;
 
     @RequestMapping("/findAll")
