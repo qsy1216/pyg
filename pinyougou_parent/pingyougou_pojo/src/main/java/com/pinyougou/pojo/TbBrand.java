@@ -2,7 +2,7 @@ package com.pinyougou.pojo;
 
 import java.io.Serializable;
 
-public class TbBrand implements Serializable {
+public class TbBrand implements Serializable{
     private Long id;
 
     private String name;
