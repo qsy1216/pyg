@@ -1,5 +1,6 @@
 package com.pinyougou.pojo;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
