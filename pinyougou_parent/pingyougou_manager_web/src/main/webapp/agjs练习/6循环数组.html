@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>入门小demo-6</title>
+
+    <script src="angular.min.js"></script>
+
+    <script>
+        var app = angular.module('myApp',[])// 定义一个叫myApp的模块
+        // 定义一个控制器
+        app.controller('myController',function ($scope) {
+
+            $scope.list= [100,192,203,434 ];//定义数组
+        });
+    </script>
+
+</head>
+<body ng-app="myApp" ng-controller="myController">
+
+<table>
+    <tr ng-repeat="x in list"><!--ng-repeat指令用于循环数组变量。-->
+        <td>{{x}}</td>
+    </tr>
+</table>
+
+
+</body>
+</html>
