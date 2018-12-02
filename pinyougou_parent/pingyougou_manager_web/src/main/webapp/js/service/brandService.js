@@ -33,4 +33,9 @@
 				return $http.post('../brand/search.do?page='+page +'&size='+size, searchEntity);
 			}
 			
+			//下拉数据列表
+			this.selectOptionList=function(){
+				return $http.get('../brand/selectOptionList.do');
+			}
+			
 		}); 
