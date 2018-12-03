@@ -32,6 +32,9 @@
         <security:headers>
             <security:frame-options policy="SAMEORIGIN"/>
         </security:headers>
+        <!-- 退出 -->
+        <security:logout/>
+        
     </security:http>
     <security:authentication-manager>
         <security:authentication-provider>

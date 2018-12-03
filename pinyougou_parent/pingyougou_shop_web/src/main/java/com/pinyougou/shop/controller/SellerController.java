@@ -1,6 +1,7 @@
-package com.pinyougou.manager.controller;
+package com.pinyougou.shop.controller;
 import java.util.List;
 
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -48,8 +49,14 @@ public class SellerController {
 	 */
 	@RequestMapping("/add")
 	public Result add(@RequestBody TbSeller seller){
+		
+		BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+		String password = passwordEncoder.encode(seller.getPassword());
+		seller.setPassword(password);
+		
 		try {
 			sellerService.add(seller);
+			
 			return new Result(true, "增加成功");
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -113,16 +120,19 @@ public class SellerController {
 	
 	
 	
-	@RequestMapping("/updateStatus")
-	public Result updateStatus(String sellerId, String status){
-		try {
-			sellerService.updateStatus(sellerId, status);
-			return new Result(true, "成功");
-			} catch (Exception e) {
-			e.printStackTrace();
-			return new Result(false, "失败");
-			}
-	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 }
