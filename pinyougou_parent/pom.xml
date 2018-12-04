@@ -10,11 +10,11 @@
   <modules>
     <module>pingyougou_pojo</module>
     <module>pingyougou_dao</module>
-    <module>pingyougou_common</module>
     <module>pingyougou_sellergoods_interface</module>
     <module>pingyougou_sellergoods_service</module>
     <module>pingyougou_manager_web</module>
     <module>pingyougou_shop_web</module>
+     <module>pinyougou_common</module>
   </modules>
 
   <packaging>pom</packaging>
