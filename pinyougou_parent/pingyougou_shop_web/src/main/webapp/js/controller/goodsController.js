@@ -150,12 +150,18 @@ app.controller('goodsController' ,function($scope,$controller ,typeTemplateServi
     });
 
     // 读取模板id
-    $scope.$watch('entity.goods.category3Id', function(newValue, oldValue) {
-        itemCatService.findOne(newValue).success(
-        	function(response){
-                $scope.entity.goods.typeTemplateId=response.typeId; //更新模板 ID
-			}
-		)
+//    $scope.$watch('entity.goods.category3Id', function(newValue, oldValue) {
+//        itemCatService.findOne(newValue).success(
+//        	function(response){
+//                $scope.entity.goods.typeTemplateId=response.typeId; //更新模板 ID
+//			}
+//		)
+//    });
+    
+    
+    $scope.$watch('selectedCategory3', function() {
+    	$scope.entity.goods.category3Id=$scope.selectedCategory3.id;
+        $scope.entity.goods.typeTemplateId=$scope.selectedCategory3.typeId;
     });
 
 
@@ -167,6 +173,24 @@ app.controller('goodsController' ,function($scope,$controller ,typeTemplateServi
                 $scope.typeTemplate.brandIds=JSON.parse( $scope.typeTemplate.brandIds);//品牌列表类型转换
                 $scope.entity.goodsDesc.customAttributeItems=JSON.parse( $scope.typeTemplate.customAttributeItems);//扩展属性
 			}
-		)
+		);
+		
+		// 查询规格列表
+		typeTemplateService.findSpecList(newValue).success(
+				function(response){
+					$scope.specList=response;
+				}
+		
+		);
+		
     });
+    
+    
+    
+    
+    
+    
+    
+    
+    
 });	
