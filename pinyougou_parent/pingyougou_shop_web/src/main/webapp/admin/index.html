@@ -19,7 +19,13 @@
     <script src="../plugins/bootstrap/js/bootstrap.min.js"></script>
   
     <script src="../plugins/adminLTE/js/app.min.js"></script>
-    
+
+    <script src="../plugins/angularjs/angular.min.js"></script>
+    <script src="../js/base.js"></script>
+    <script src="../js/service/sellerService.js"></script>
+    <script src="../js/controller/baseController.js"></script>
+    <script src="../js/controller/sellerController.js"></script>
+
 
     
     <script type="text/javascript">
@@ -32,22 +38,10 @@
 		 }
     
 	</script>    
-	
-	<script type="text/javascript" src="../plugins/angularjs/angular.min.js"></script>
-
-
-	<!-- 引入已经封装好的js -->
-	<script type="text/javascript" src="../js/base.js"></script>
-	<script type="text/javascript" src="../js/service/loginService.js"></script>
-	<script type="text/javascript" src="../js/controller/baseController.js"></script>
-	<script type="text/javascript" src="../js/controller/indexController.js"></script>
-	
-	
-	
 
 </head>
 
-<body class="hold-transition skin-blue sidebar-mini" ng-app="pinyougou" ng-controller="indexController">
+<body class="hold-transition skin-blue sidebar-mini" ng-app="app" ng-controller="sellerController" ng-init="getSellerId()">
 
     <div class="wrapper">
 
@@ -278,7 +272,7 @@
                                     <img src="../img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                                     <p>
-                                       {{sellerId}}
+                                       chendahai 
                                         <small>最后登录 11:20AM</small>
                                     </p>
                                 </li>
@@ -364,7 +358,6 @@
 				            </li>
 				        </ul>                        
 				    </li>
-					
 				    <!-- 菜单 /-->
 
                 </ul>
