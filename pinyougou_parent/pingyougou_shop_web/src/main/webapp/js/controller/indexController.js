@@ -3,9 +3,9 @@ app.controller('indexController',function($scope,$controller ,loginService){
 	// 读取登录人名称
 	$scope.showLoginName=function(){
 		
-		loginService.sellerId().success(
+		loginService.loginName().success(
 				function(response){
-					$scope.sellerId=response.sellerId;
+					$scope.loginName=response.loginName;
 					
 				}
 		

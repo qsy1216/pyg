@@ -15,7 +15,7 @@ public class LoginController {
 		String name=SecurityContextHolder.getContext()
 				.getAuthentication().getName();
 		Map map = new HashedMap();
-		map.put("sellerId", name);
+		map.put("loginName", name);
 		return map ;
 		
 	}

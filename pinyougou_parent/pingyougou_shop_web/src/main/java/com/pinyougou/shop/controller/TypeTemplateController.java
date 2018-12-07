@@ -103,7 +103,7 @@ public class TypeTemplateController {
 	
 		/**
 	 * 查询+分页
-	 * @param brand
+	 * @param
 	 * @param page
 	 * @param rows
 	 * @return
@@ -116,7 +116,6 @@ public class TypeTemplateController {
 	//根据模板id查询
 	@RequestMapping("/findSpecList")
 	public List<Map> findSpecList(Long id){
-		
 		return typeTemplateService.findSpecList(id);
 	}
 
