@@ -1,5 +1,5 @@
  //控制层 
-app.controller('specificationController' ,function($scope,$controller,$http  ,specificationService){	
+app.controller('specificationController' ,function($scope,$controller   ,specificationService){	
 	
 	$controller('baseController',{$scope:$scope});//继承
 	
@@ -8,7 +8,6 @@ app.controller('specificationController' ,function($scope,$controller,$http  ,sp
 		specificationService.findAll().success(
 			function(response){
 				$scope.list=response;
-				
 			}			
 		);
 	}    
@@ -31,7 +30,6 @@ app.controller('specificationController' ,function($scope,$controller,$http  ,sp
 			}
 		);				
 	}
-	
 	
 	//保存 
 	$scope.save=function(){				
@@ -79,49 +77,16 @@ app.controller('specificationController' ,function($scope,$controller,$http  ,sp
 		);
 	}
 	
-	// 上面的的都是代码自动生成器生成的 
+	//$scope.entity={specificationOptionList:[]};
 	
-	//初始化
-	
-	$scope.entity={specificationOptionList:[]};
-	
-	//新增规格选项行
+	//增加规格选项行
 	$scope.addTableRow=function(){
-		$scope.entity.specificationOptionList.push({}); //需要在方法外面初始化specificationOptionList
+		$scope.entity.specificationOptionList.push({});			
 	}
 	
-	// 删除规格选项行
-	$scope.deleteTableRow=function(index){
-		
-		$scope.entity.specificationOptionList.splice(index,1);//删除
+	//删除规格选项行
+	$scope.deleTableRow=function(index){
+		$scope.entity.specificationOptionList.splice(index,1);
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
     
 });	

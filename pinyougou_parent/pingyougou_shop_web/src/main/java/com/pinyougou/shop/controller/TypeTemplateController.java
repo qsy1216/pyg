@@ -5,6 +5,8 @@ import com.pinyougou.pojo.TbTypeTemplate;
 import com.pinyougou.sellergoods.service.TypeTemplateService;
 import entity.PageResult;
 import entity.Result;
+
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,6 +21,7 @@ import java.util.Map;
  */
 @RestController
 @RequestMapping("/typeTemplate")
+@Transactional
 public class TypeTemplateController {
 
 	@Reference
