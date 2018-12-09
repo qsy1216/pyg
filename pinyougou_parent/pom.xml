@@ -17,7 +17,10 @@
      <module>pinyougou_common</module>
       <module>pinyougou_content_interface</module>
       <module>pinyougou_content_service</module>
-      <module>pinyougouportalweb</module>
+      <module>pinyougou_portal_web</module>
+      <module>pinyougou_search_interface</module>
+      <module>pinyougou_search_service</module>
+      <module>pinyougou_search_web</module>
   </modules>
 
   <packaging>pom</packaging>
@@ -245,7 +248,7 @@
           </exclusion>
         </exclusions>
       </dependency>
-      <!-- solr客户端 -->
+      <!-- 客户端 -->
       <dependency>
         <groupId>org.apache.solr</groupId>
         <artifactId>solr-solrj</artifactId>
@@ -502,6 +505,14 @@
       <artifactId>xml-apis</artifactId>
       <version>1.4.01</version>
     </dependency>
+
+      <dependency>
+          <groupId>org.springframework.data</groupId>
+          <artifactId>spring-data-solr</artifactId>
+          <version>1.5.5.RELEASE</version>
+      </dependency>
+
+
   </dependencies>
 
   <build>
