@@ -17,6 +17,7 @@
      <module>pinyougou_common</module>
       <module>pinyougou_content_interface</module>
       <module>pinyougou_content_service</module>
+      <module>pinyougouportalweb</module>
   </modules>
 
   <packaging>pom</packaging>
