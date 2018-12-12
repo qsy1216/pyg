@@ -36,15 +36,15 @@ public class BrandController {
     /**
      * 分页查询
      * @param page
-     * @param size
+     * @param rows
      * @return
      * @throws Exception
      */
-    @RequestMapping("/findPage")
-    public PageResult findPage(int page,int size) throws Exception {
+  /*  @RequestMapping("/findPage")
+    public PageResult findPage(int page,int rows) throws Exception {
     	
-        return brandService.findPage(page, size);
-    }
+        return brandService.findPage(page, rows);
+    }*/
     
     /**
      * 添加品牌
@@ -114,12 +114,12 @@ public class BrandController {
 	 * 条件分页查询
 	 * @param brand
 	 * @param page
-	 * @param size
+	 * @param rows
 	 * @return
 	 */
 	@RequestMapping("/search")
-	public PageResult search(@RequestBody TbBrand brand,int page,int size){
-		return brandService.findPage(brand, page, size);		
+	public PageResult search(@RequestBody TbBrand brand,int page,int rows){
+		return brandService.findPage(brand, page, rows);
 	}
 	
 	

@@ -144,6 +144,7 @@ public class SearchServiceImpl implements SearchService {
         if(templateId!=null){
             //2.根据模板ID获取品牌列表
             List brandList = (List) redisTemplate.boundHashOps("brandList").get(templateId);
+
             map.put("brandList", brandList);
             System.out.println("品牌列表条数："+brandList.size());
 
