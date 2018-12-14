@@ -1,9 +1,6 @@
 package com.pinyougou.sellergoods.service.impl;
 
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 import com.alibaba.fastjson.JSON;
 import com.pinyougou.mapper.*;
@@ -30,6 +27,7 @@ public class GoodsServiceImpl implements GoodsService {
     private TbGoodsMapper goodsMapper;
     @Autowired
     private TbGoodsDescMapper goodsDescMapper;
+
 
     /**
      * 查询全部
@@ -202,6 +200,26 @@ public class GoodsServiceImpl implements GoodsService {
 
         Page<TbGoods> page = (Page<TbGoods>) goodsMapper.selectByExample(example);
         return new PageResult(page.getTotal(), page.getResult());
+    }
+
+    @Override
+    public List<TbItem> findItemListByGoodsIdandStatus(Long[] goodsIds, String status) {
+        TbItemExample example=new TbItemExample();
+        com.pinyougou.pojo.TbItemExample.Criteria criteria = example.createCriteria();
+        criteria.andGoodsIdIn(Arrays.asList(goodsIds));
+        //criteria.andStatusEqualTo(status);
+        return itemMapper.selectByExample(example);
+    }
+
+    @Override
+    public void updateStatus(Long[] ids, String status) {
+        for (Long id : ids) {
+            TbGoods tbGoods = goodsMapper.selectByPrimaryKey(id);
+
+            tbGoods.setAuditStatus(status);
+
+            goodsMapper.updateByPrimaryKey(tbGoods);
+        }
     }
 
 

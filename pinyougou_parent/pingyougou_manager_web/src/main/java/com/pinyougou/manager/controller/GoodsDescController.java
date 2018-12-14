@@ -1,6 +1,7 @@
 package com.pinyougou.manager.controller;
 import java.util.List;
 
+import com.pinyougou.pojo.TbItem;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -101,7 +102,7 @@ public class GoodsDescController {
 	
 		/**
 	 * 查询+分页
-	 * @param brand
+	 * @param
 	 * @param page
 	 * @param rows
 	 * @return
@@ -110,5 +111,7 @@ public class GoodsDescController {
 	public PageResult search(@RequestBody TbGoodsDesc goodsDesc, int page, int rows  ){
 		return goodsDescService.findPage(goodsDesc, page, rows);		
 	}
-	
+
+
+
 }

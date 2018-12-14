@@ -9,5 +9,10 @@ app.controller('contentController',function($scope,contentService){
 			}
 		);		
 	}
+
+	// 首页搜索跳转到用户搜索页
+	$scope.search=function(){
+        location.href="http://localhost:9004/search.html#?keywords="+$scope.keywords;
+	}
 	
 });
