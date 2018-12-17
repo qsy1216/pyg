@@ -14,7 +14,7 @@ public class TestApp {
     @Test
     public void test1() throws SolrServerException {
        //连接solr服务
-        HttpSolrServer httpSolrServer = new HttpSolrServer("http://127.0.0.1:8080/solr");
+        HttpSolrServer httpSolrServer = new HttpSolrServer("http://192.168.25.168:8180/solr");
         //查询响应
         SolrQuery query = new SolrQuery("item_title:手机");
         //过滤

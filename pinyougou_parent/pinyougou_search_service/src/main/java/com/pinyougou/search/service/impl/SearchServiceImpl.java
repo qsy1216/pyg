@@ -10,7 +10,6 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.solr.core.SolrTemplate;
 import org.springframework.data.solr.core.query.*;
 import org.springframework.data.solr.core.query.result.*;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -241,15 +240,14 @@ public class SearchServiceImpl implements SearchService {
         solrTemplate.commit();
     }
 
-
-
     @Override
-    public void deleteByGoodsIds(List goodsIdList) {
-        System.out.println("删除商品 ID"+goodsIdList);
-        Query query=new SimpleQuery();
-        Criteria criteria=new Criteria("item_goodsid").in(goodsIdList);
+    public void deleteByGoodsIds(List goodsIds) {
+        Query query=new SimpleQuery("*:*");
+        Criteria criteria=new Criteria("item_goodsid").in(goodsIds);
         query.addCriteria(criteria);
         solrTemplate.delete(query);
         solrTemplate.commit();
     }
+
+
 }

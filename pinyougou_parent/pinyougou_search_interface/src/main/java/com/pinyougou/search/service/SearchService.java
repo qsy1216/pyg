@@ -20,9 +20,8 @@ public interface SearchService {
         public void importList(List list);
 
         /**
-         * 删除数据
-         * @param
+         * 删除商品列表
+         * @param goodsIds  (SPU)
          */
-        public void deleteByGoodsIds(List goodsIdList);
-
+        public void deleteByGoodsIds(List goodsIds);
 }

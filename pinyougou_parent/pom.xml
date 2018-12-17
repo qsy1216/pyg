@@ -24,6 +24,7 @@
       <module>pinyougousolrutil</module>
       <module>pinyougou_page_interface</module>
       <module>pinyougou_page_service</module>
+      <module>pinyougou_page_web</module>
   </modules>
 
   <packaging>pom</packaging>
