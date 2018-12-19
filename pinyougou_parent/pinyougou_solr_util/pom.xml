@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>pinyougou-solr-util</artifactId>
+    <artifactId>pinyougou_solr_util</artifactId>
 
     <dependencies>
         <dependency>
