@@ -10,10 +10,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.pinyougou</groupId>
-    <artifactId>pinyougou_cart_web</artifactId>
+    <artifactId>pinyougou_order_service</artifactId>
     <packaging>war</packaging>
-
-
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -28,50 +26,9 @@
             <version>4.11</version>
             <scope>test</scope>
         </dependency>
-
         <dependency>
             <groupId>com.pinyougou</groupId>
-            <artifactId>pinyougou_common</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.pinyougou</groupId>
-            <artifactId>pinyougou_user_interface</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-
-
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-web</artifactId>
-            <version>4.1.0.RELEASE</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-config</artifactId>
-            <version>4.1.0.RELEASE</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-cas</artifactId>
-            <version>4.1.0.RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>org.jasig.cas.client</groupId>
-            <artifactId>cas-client-core</artifactId>
-            <version>3.3.3</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>log4j-over-slf4j</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>com.pinyougou</groupId>
-            <artifactId>pinyougou_cart_interface</artifactId>
+            <artifactId>pingyougou_dao</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
@@ -79,10 +36,16 @@
             <artifactId>pinyougou_order_interface</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>com.pinyougou</groupId>
+            <artifactId>pinyougou_common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
     </dependencies>
 
     <build>
-        <finalName>pinyougou_cart_web</finalName>
+        <finalName>pinyougou_order_service</finalName>
         <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
             <plugins>
                 <plugin>
@@ -122,7 +85,7 @@
                       <artifactId>tomcat7-maven-plugin</artifactId>
                       <version>2.2</version>
                       <configuration>
-                        <port>9007</port>
+                        <port>8088</port>
                         <path>/</path>
                       </configuration>
                     </plugin>
