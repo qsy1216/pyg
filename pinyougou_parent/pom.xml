@@ -30,7 +30,6 @@
       <module>pinyougou_user_web</module>
       <module>pinyougou_cart_interface</module>
       <module>pinyougou_cart_service</module>
-      <module>pinyougou_cart_service</module>
       <module>pinyougou_cart_web</module>
       <module>pinyougou_order_interface</module>
       <module>pinyougou_order_service</module>
